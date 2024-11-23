@@ -9,16 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="h-full">
-
-    <!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
+<body class="h-full dark:bg-gray-900 dark:text-white">
     <div class="min-h-full">
         <nav class="bg-gray-800">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -31,11 +22,30 @@
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                                 <a href="{{ route('home') }}" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
                                 <a href="{{ route('about') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
                                 <a href="{{ route('contact') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Content</a>
-                               </div>
+                                @if (Route::has('login'))
+                                    @auth
+                                        <a href="{{ url('/dashboard') }}"
+                                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                                            Dashboard
+                                        </a>
+                                    @else
+                                        <a href="{{ route('login') }}"
+                                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                                            Log in
+                                        </a>
+
+                                        @if (Route::has('register'))
+                                            <a href="{{ route('register') }}"
+                                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                                                Register
+                                            </a>
+                                        @endif
+                                    @endauth
+                                @endif
+                            </div>
                         </div>
                     </div>
                     <div class="hidden md:block">
@@ -95,9 +105,13 @@
             <div class="md:hidden" id="mobile-menu">
                 <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="{{ route('home') }}" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
-                    <a href="{{ route('about') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-                    <a href="{{ route('contact') }}" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+                    <a href="{{ route('home') }}"
+                        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                        aria-current="page">Home</a>
+                    <a href="{{ route('about') }}"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                    <a href="{{ route('contact') }}"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
                 </div>
                 <div class="border-t border-gray-700 pb-3 pt-4">
                     <div class="flex items-center px-5">
@@ -126,19 +140,17 @@
             </div>
         </nav>
 
-        <header class="bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
+        <header class="bg-white dark:bg-gray-800 shadow">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 dark:bg-gray-800">
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-500">{{ $heading }}</h1>
             </div>
         </header>
         <main>
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 dark:text-gray-500">
                 {{ $slot }}
             </div>
         </main>
     </div>
-
-
 </body>
 
 </html>
