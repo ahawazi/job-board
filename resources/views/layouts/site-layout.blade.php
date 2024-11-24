@@ -20,9 +20,9 @@
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="{{ route('home') }}" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-                                <a href="{{ route('about') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-                                <a href="{{ route('contact') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Content</a>
+                                <x-nav-link2 href="{{ route('home') }}" :active="request()->is('/')" >Home</x-nav-link2>
+                                <x-nav-link2 href="{{ route('about') }}" :active="request()->is('about')" >About</x-nav-link2>
+                                <x-nav-link2 href="{{ route('contact') }}" :active="request()->is('contact')" >Content</x-nav-link2>
                                 <x-login-register />
                             </div>
                         </div>
