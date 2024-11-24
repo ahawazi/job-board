@@ -2,5 +2,5 @@
     <x-slot:heading>
         Home page
     </x-slot:heading>
-    <h1 class="font-bold">at contact</h1>
+    <h1 class="font-bold">at home</h1>
 </x-site-layout>
