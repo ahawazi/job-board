@@ -21,7 +21,7 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <x-nav-link2 href="{{ route('home') }}" :active="request()->is('/')" >Home</x-nav-link2>
-                                <x-nav-link2 href="{{ route('about') }}" :active="request()->is('about')" >About</x-nav-link2>
+                                <x-nav-link2 href="{{ route('jobs') }}" :active="request()->is('jobs')" >Jobs</x-nav-link2>
                                 <x-nav-link2 href="{{ route('contact') }}" :active="request()->is('contact')" >Content</x-nav-link2>
                                 <x-login-register />
                             </div>
@@ -77,8 +77,8 @@
                     <a href="{{ route('home') }}"
                         class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
                         aria-current="page">Home</a>
-                    <a href="{{ route('about') }}"
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                    <a href="{{ route('jobs') }}"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Jobs</a>
                     <a href="{{ route('contact') }}"
                         class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
                 </div>
