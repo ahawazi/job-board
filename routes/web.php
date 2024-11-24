@@ -5,7 +5,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
-Route::get('/about', [PagesController::class, 'about'])->name('about');
+Route::get('/jobs', [PagesController::class, 'jobs'])->name('jobs');
+Route::get('/job/{id}', [PagesController::class, 'job'])->name('job');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 
 Route::get('/dashboard', function () {
