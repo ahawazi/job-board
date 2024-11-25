@@ -10,6 +10,9 @@ class JobListing extends Model
     /** @use HasFactory<\Database\Factories\JobListingFactory> */
     use HasFactory;
 
-    public $guarded = [];
+    protected $fillable = [
+        'title',
+        'salary',
+    ];
 
 }
