@@ -1,13 +1,15 @@
 <?php
 
+use App\Http\Controllers\JobListingController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
-Route::get('/jobs', [PagesController::class, 'jobs'])->name('jobs');
-Route::get('/job/{id}', [PagesController::class, 'job'])->name('job');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+
+Route::get('/jobs', [JobListingController::class, 'jobs'])->name('jobs');
+Route::get('/job/{id}', [JobListingController::class, 'job'])->name('job');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -19,4 +21,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
