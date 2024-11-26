@@ -6,6 +6,10 @@ building a Job Board platform where users can post and apply to job listings.
 ## The Tech Stack
 - [Laravel V11](https://laravel.com/).
 
+## Used Packages
+
+- [Debugbar](https://github.com/barryvdh/laravel-debugbar) For debug.
+
 ## Running Locally
 
 run:
