@@ -11,7 +11,7 @@ class JobListingController extends Controller
     public function jobs()
     {
         return view('jobs', [
-            'jobs' => JobListing::all(),
+            'jobs' => JobListing::with('employer')->get(),
         ]);
     }
 
