@@ -11,7 +11,9 @@ class JobListingController extends Controller
     public function jobs()
     {
         return view('jobs', [
-            'jobs' => JobListing::with('employer')->paginate(3),
+            // 'jobs' => JobListing::with('employer')->paginate(3),
+            // 'jobs' => JobListing::with('employer')->simplePaginate(3),
+            'jobs' => JobListing::with('employer')->cursorPaginate(3),
         ]);
     }
 
