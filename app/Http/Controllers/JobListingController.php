@@ -8,20 +8,22 @@ use Illuminate\Support\Arr;
 
 class JobListingController extends Controller
 {
-    public function jobs()
+    public function index(Request $request)
     {
-        return view('jobs', [
+        return view('jobs.index', [
             // 'jobs' => JobListing::with('employer')->paginate(3),
             // 'jobs' => JobListing::with('employer')->simplePaginate(3),
             'jobs' => JobListing::with('employer')->cursorPaginate(3),
         ]);
     }
 
-    public function job($id)
+    public function create(Request $request)
     {
-        $job = Arr::first(JobListing::all(), fn($job) => $job['id'] == $id);
-        return view('job', [
-            'job' => $job,
-        ]);
+        return view('jobs.create');
+    }
+
+    public function show(JobListing $job)
+    {
+        return view('jobs.show', compact('job'));
     }
 }
