@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 
-Route::get('/jobs', [JobListingController::class, 'jobs'])->name('jobs');
-Route::get('/job/{id}', [JobListingController::class, 'job'])->name('job');
+Route::resource('/jobs', JobListingController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
