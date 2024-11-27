@@ -9,6 +9,7 @@ export default {
         './resources/views/**/*.blade.php',
     ],
 
+    darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {
@@ -17,5 +18,7 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [forms,
+        require('@tailwindcss/forms'),
+    ],
 };
