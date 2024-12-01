@@ -12,10 +12,15 @@ class JobListing extends Model
     /** @use HasFactory<\Database\Factories\JobListingFactory> */
     use HasFactory;
 
+    protected $table = 'job_listings';
+
     protected $fillable = [
         'title',
         'salary',
+        'employer_id',
     ];
+
+    // protected $guarded = [];
 
     public function employer():BelongsTo
     {
