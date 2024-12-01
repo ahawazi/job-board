@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\JobListingController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 
-Route::resource('/jobs', JobListingController::class);
+Route::resource('/jobs', JobController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

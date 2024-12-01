@@ -48,8 +48,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function jobsListing(): HasMany
+    public function jobs(): HasMany
     {
-        return $this->hasMany(JobListing::class);
+        return $this->hasMany(Job::class);
     }
 }

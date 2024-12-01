@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\JobListing;
+use App\Models\Job;
 use App\Models\Tag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,7 +18,7 @@ return new class extends Migration
 
         Schema::create('job_tag', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(JobListing::class, 'job_listing_id')->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Job::class, 'job_id')->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Tag::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class JobListing extends Model
+class Job extends Model
 {
-    /** @use HasFactory<\Database\Factories\JobListingFactory> */
+    /** @use HasFactory<\Database\Factories\JobFactory> */
     use HasFactory;
 
     protected $table = 'job_listings';
