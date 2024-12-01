@@ -11,9 +11,6 @@
 </head>
 
 <body class="h-full bg-gray-100 dark:bg-gray-900 dark:text-white">
-
-
-
     <div class="min-h-full">
         <nav class="bg-gray-800">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -22,6 +19,7 @@
                         <div class="shrink-0">
                             <x-application-logo />
                         </div>
+                        
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-center space-x-4">
                                 <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
@@ -71,10 +69,10 @@
                                         <x-application-logo />
                                     </button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
+
                     <div class="-mr-2 flex md:hidden">
                         <!-- Mobile menu button -->
                         <button type="button"
@@ -122,7 +120,6 @@
                             <x-notification-svg />
                         </button>
                     </div>
-
                 </div>
             </div>
         </nav>
@@ -132,6 +129,7 @@
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-500">{{ $heading }}</h1>
             </div>
         </header>
+
         <main>
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 dark:text-gray-500">
                 {{ $slot }}
