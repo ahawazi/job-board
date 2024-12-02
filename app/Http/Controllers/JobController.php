@@ -37,4 +37,19 @@ class JobController extends Controller
     {
         return view('jobs.show', compact('job'));
     }
+
+    public function edit(Request $request, Job $job)
+    {
+        return view('jobs.edit', compact('job'));
+    }
+
+    public function update(StoreJobRequest $request, Job $job)
+    {
+        $job->update([
+            'title' => $request->input('title'),
+            'salary' => $request->input('salary'),
+            'employer_id' => 2,
+        ]);
+        return to_route('jobs.index');
+    }
 }
