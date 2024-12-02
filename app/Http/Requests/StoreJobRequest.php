@@ -23,7 +23,7 @@ class StoreJobRequest extends FormRequest
     {
         return [
             'title' => 'required|string|min:3|max:20',
-            'salary' => 'required',
+            'salary' => 'required|numeric',
         ];
     }
 }
