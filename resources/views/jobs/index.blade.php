@@ -4,7 +4,6 @@
     </x-slot:heading>
 
     <div class="space-y-4">
-        <x-link-button-green href="{{ route('jobs.create') }}">Create Job</x-link-button-green>
         @foreach ($jobs as $job)
             <a href="{{ route('jobs.show', $job['id']) }}"
                 class="block px-4 py-6 border-gray-200 rounded-lg dark:border-white dark:bg-gray-600">
