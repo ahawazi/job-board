@@ -52,4 +52,10 @@ class JobController extends Controller
         ]);
         return to_route('jobs.index');
     }
+
+    public function destroy(Job $job)
+    {
+        $job->delete();
+        return to_route('jobs.index');
+    }
 }
