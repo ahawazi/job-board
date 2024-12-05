@@ -1,8 +1,13 @@
 <?php
 
 use App\Models\Job;
+use Tests\TestCase;
 
 use function Pest\Laravel\get;
+
+beforeEach(function () {
+    TestCase::class;
+});
 
 it ('show Jobs', function() {
     $job = Job::factory()->create();
