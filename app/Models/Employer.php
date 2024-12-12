@@ -14,6 +14,7 @@ class Employer extends Model
 
     protected $fillable = [
         'name',
+        'user_id',
     ];
 
     public function jobs():HasMany
