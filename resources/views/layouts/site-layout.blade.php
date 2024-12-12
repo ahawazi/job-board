@@ -25,31 +25,12 @@
                                 <x-nav-link2 href="{{ route('home') }}" :active="request()->is('/')">Home</x-nav-link2>
                                 <x-nav-link2 href="{{ route('jobs.index') }}" :active="request()->is('jobs.index')">Jobs</x-nav-link2>
                                 <x-nav-link2 href="{{ route('contact') }}" :active="request()->is('contact')">Content</x-nav-link2>
-                                <x-login-register />
                             </div>
                         </div>
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-4 flex items-center md:ml-6">
-                            <button type="button"
-                                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                <span class="absolute -inset-1.5"></span>
-                                <span class="sr-only">View notifications</span>
-                                <x-notification-svg />
-                            </button>
-
-                            <!-- Profile dropdown -->
-                            <div class="relative ml-3">
-                                <div>
-                                    <button type="button"
-                                        class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                        id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                        <span class="absolute -inset-1.5"></span>
-                                        <span class="sr-only">Open user menu</span>
-                                        <x-application-logo />
-                                    </button>
-                                </div>
-                            </div>
+                            <x-login-register />
                         </div>
                     </div>
 
