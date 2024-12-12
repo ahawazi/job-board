@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreJobRequest;
 use App\Models\Job;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
+use App\Http\Requests\StoreJobRequest;
 
 class JobController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Job::class, 'job', ['except' => ['index', 'show']]);
+    }
+
     public function index(Request $request)
     {
         return view('jobs.index', [
