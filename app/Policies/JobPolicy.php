@@ -55,20 +55,16 @@ class JobPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Job $job): Response
+    public function restore(User $user, Job $job): bool
     {
-        return $user->id === $job->user_id
-        ? Response::allow()
-        : Response::deny('You do not own this post.');
+        return true;
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Job $job): Response
+    public function forceDelete(User $user, Job $job): bool
     {
-        return $user->id === $job->user_id
-            ? Response::allow()
-            : Response::deny('You do not own this post.');
+        return true;
     }
 }

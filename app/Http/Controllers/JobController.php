@@ -10,7 +10,7 @@ class JobController extends Controller
 {
     public function __construct()
     {
-        $this->authorizeResource(Job::class, 'job', ['except' => ['index', 'show']]);
+        $this->authorizeResource(Job::class, 'job', ['except' => ['index', 'show', 'create', 'restore', 'forceDelete']]);
     }
 
     public function index(Request $request)
