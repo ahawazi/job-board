@@ -9,13 +9,14 @@ use function Pest\Laravel\post;
 
 beforeEach(function () {
     TestCase::class;
+
     $this->employer = Employer::factory()->create();
+
+    $this->user = User::factory()->create();
+    be($this->user);
 });
 
 it('successfully creates a job', function () {
-    $user = User::factory()->create();
-    be($user);
-
     $response = post(route('jobs.store'), [
         'title' => 'Valid Job Title',
         'salary' => '20000',
@@ -28,7 +29,7 @@ it('successfully creates a job', function () {
         'title' => 'Valid Job Title',
         'salary' => '20000',
         'employer_id' => $this->employer->id,
-        'user_id' => $user->id,
+        'user_id' => $this->user->id,
     ]);
 
     $this->withoutExceptionHandling();
