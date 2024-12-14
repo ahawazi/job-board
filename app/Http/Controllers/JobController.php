@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\JobPosted;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreJobRequest;
+use Illuminate\Support\Facades\Mail;
 
 class JobController extends Controller
 {
@@ -29,11 +31,16 @@ class JobController extends Controller
 
     public function store(StoreJobRequest $request)
     {
-        $request->user()->jobs()->create([
+        $job = $request->user()->jobs()->create([
             'title' => $request->input('title'),
             'salary' => $request->input('salary'),
             'employer_id' => 1,
         ]);
+
+        Mail::to($job->employer->user)->send(
+            new JobPosted($job)
+        );
+
         return to_route('jobs.index');
     }
 
