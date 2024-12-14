@@ -14,7 +14,7 @@
                     <x-form-field>
                         <x-form-lable for="title">Title</x-form-lable>
                         <div class="mt-2">
-                            <x-form-input name="title" id="title" placeholder="Title" required />
+                            <x-form-input name="title" id="title" placeholder="title" required />
                             <x-form-error name="title" />
                         </div>
                     </x-form-field>
@@ -22,7 +22,7 @@
                     <x-form-field>
                         <x-form-lable for="salary">Salary</x-form-lable>
                         <div class="mt-2">
-                            <x-form-input name="salary" id="salary" placeholder="CEO" required />
+                            <x-form-input name="salary" id="salary" placeholder="salary" required />
                             <x-form-error name="salary" />
                         </div>
                     </x-form-field>
