@@ -24,7 +24,7 @@ class UpdateJobRequest extends FormRequest
         return [
             'title' => 'required|string|min:3|max:20',
             'salary' => 'required|numeric',
-            'employer_id' => 'required|exists:employers,id',
+            // 'employer_id' => 'required|exists:employers,id',
         ];
     }
 }
